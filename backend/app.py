@@ -48,7 +48,7 @@ def narrow_down_realtors(client):
 
 @app.route("/ai/")
 def gemini_response(realtor, client):
-    genai.configure(api_key="AIzaSyAJ1ML4UXZ7-pOKS5CeuZN3VbHnHnb0NFc")
+    genai.configure(api_key="")
     model = genai.GenerativeModel("gemini-1.5-flash")
     specifications =  """
     Take the following attributes of the realtor and compare it to the attributes of the client. 
