@@ -48,8 +48,6 @@ def narrow_down_realtors(client):
 
 @app.route("/ai/")
 def gemini_response(realtor, client):
-
-    print("inside")
     genai.configure(api_key="AIzaSyAJ1ML4UXZ7-pOKS5CeuZN3VbHnHnb0NFc")
     model = genai.GenerativeModel("gemini-1.5-flash")
     specifications =  """
@@ -111,8 +109,6 @@ def receive_form_data():
         narrowed_data = narrow_down_realtors(form_data)
     elif "budget" not in form_data:
         narrowed_data = narrow_down_clients(form_data)
-
-    print(narrowed_data)
 
     return jsonify(narrowed_data)
 
